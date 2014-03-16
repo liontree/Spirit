@@ -42,7 +42,7 @@
 //<span class="commodity-price">￥105.00</span>
 //</div>
 
-+(NSMutableArray *)parsingHTML : (NSString *)host
++(NSMutableArray *)getImgArray:(NSString *)host
 {
     NSString *html = [ZYurl getUrl:host];
     NSError *error = nil;
@@ -51,16 +51,51 @@
         NSLog(@"Error: %@", error);
     }
     HTMLNode *bodyNode = [parser body];
+    NSMutableArray *urlImgArray = [[NSMutableArray alloc] init];
+    
     NSArray *divNodes = [bodyNode findChildrenOfClass:@"card-hd"];
-    NSMutableArray *urlArray = [[NSMutableArray alloc] init];
     for(HTMLNode *divNode in divNodes)
     {
         NSString *src = [[divNode findChildOfClass:@"story-image"] getAttributeNamed:@"src"];
         NSLog(@"src is %@", src);
-        [urlArray addObject:src];
-        src = nil;
+        if(src)
+        {
+            [urlImgArray addObject:src];
+        }
     }
-    return urlArray;
+    
+    return urlImgArray;
+}
+
++(NSMutableArray *)getTitleArray:(NSString *)host
+{
+    NSString *html = [ZYurl getUrl:host];
+    NSError *error = nil;
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
+    if (error) {
+        NSLog(@"Error: %@", error);
+    }
+    HTMLNode *bodyNode = [parser body];
+    NSMutableArray *urlTitleArray = [[NSMutableArray alloc] init];
+    if(bodyNode)
+    {
+        NSArray *divNodes = [bodyNode findChildrenOfClass:@"card-bd"];
+        
+        for(HTMLNode *divNode in divNodes)
+        {
+            NSString *title = [[divNode findChildOfClass:@"story-title"] getAttributeNamed:@"title"];
+            NSLog(@"title is %@", title);
+            if(title)
+            {
+                [urlTitleArray addObject:title];
+            }
+        }
+    }
+    else
+    {
+        NSLog(@"error..");
+    }
+    return urlTitleArray;
 }
 
 @end

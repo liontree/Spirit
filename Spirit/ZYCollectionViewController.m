@@ -51,16 +51,20 @@
     
     Cell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
+   
+    NSMutableArray *imgArray = [ZYurl getImgArray:HOST];
     
-    NSMutableArray *urlArray = [ZYurl parsingHTML:HOST];
-    NSLog(@"urlArray is %@",urlArray);
-    for(NSString *url in urlArray)
+    NSMutableArray *titleArray = [ZYurl getTitleArray:HOST];
+    
+    for(NSString *url in imgArray)
     {
         cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
     }
-//    cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-    cell.textView.text = @"韵宝家具 地中海布艺沙发 客厅布艺沙发 三人沙发4017D-3";
-    //    cell.backgroundColor=[UIColor colorWithRed:95.0/255.0 green:148.0/255.0 blue:148.0/255.0 alpha:1.0];
+    
+    for(NSString *title in titleArray)
+    {
+        cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:title]]];
+    }
     return cell;
 }
 
