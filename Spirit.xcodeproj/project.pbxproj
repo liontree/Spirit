@@ -19,6 +19,12 @@
 		1CCC52EA18D484C700C624E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCC52D218D484C700C624E9 /* UIKit.framework */; };
 		1CCC52F218D484C700C624E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC52F018D484C700C624E9 /* InfoPlist.strings */; };
 		1CCC52F418D484C700C624E9 /* SpiritTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC52F318D484C700C624E9 /* SpiritTests.m */; };
+		1CCC530818D491E600C624E9 /* p4557986.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC530718D491E600C624E9 /* p4557986.jpg */; };
+		1CCC530C18D569F400C624E9 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC530B18D569F400C624E9 /* Cell.m */; };
+		1CCC531518D58F8B00C624E9 /* ZYCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC531318D58F8B00C624E9 /* ZYCollectionViewController.m */; };
+		1CCC531618D58F8B00C624E9 /* ZYCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC531418D58F8B00C624E9 /* ZYCollectionViewController.xib */; };
+		1CCC531B18D5908800C624E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC531918D5908800C624E9 /* ViewController.m */; };
+		1CCC531C18D5908800C624E9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC531A18D5908800C624E9 /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,15 @@
 		1CCC52EF18D484C700C624E9 /* SpiritTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpiritTests-Info.plist"; sourceTree = "<group>"; };
 		1CCC52F118D484C700C624E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1CCC52F318D484C700C624E9 /* SpiritTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpiritTests.m; sourceTree = "<group>"; };
+		1CCC530718D491E600C624E9 /* p4557986.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = p4557986.jpg; path = ../../p4557986.jpg; sourceTree = "<group>"; };
+		1CCC530A18D569F400C624E9 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		1CCC530B18D569F400C624E9 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		1CCC531218D58F8B00C624E9 /* ZYCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCollectionViewController.h; sourceTree = "<group>"; };
+		1CCC531318D58F8B00C624E9 /* ZYCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCollectionViewController.m; sourceTree = "<group>"; };
+		1CCC531418D58F8B00C624E9 /* ZYCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYCollectionViewController.xib; sourceTree = "<group>"; };
+		1CCC531818D5908800C624E9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1CCC531918D5908800C624E9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1CCC531A18D5908800C624E9 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +122,7 @@
 		1CCC52D418D484C700C624E9 /* Spirit */ = {
 			isa = PBXGroup;
 			children = (
+				1CCC52FD18D4867200C624E9 /* Spirit */,
 				1CCC52DD18D484C700C624E9 /* AppDelegate.h */,
 				1CCC52DE18D484C700C624E9 /* AppDelegate.m */,
 				1CCC52E018D484C700C624E9 /* Images.xcassets */,
@@ -118,6 +134,7 @@
 		1CCC52D518D484C700C624E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1CCC530618D4913800C624E9 /* Images */,
 				1CCC52D618D484C700C624E9 /* Spirit-Info.plist */,
 				1CCC52D718D484C700C624E9 /* InfoPlist.strings */,
 				1CCC52DA18D484C700C624E9 /* main.m */,
@@ -142,6 +159,45 @@
 				1CCC52F018D484C700C624E9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CCC52FD18D4867200C624E9 /* Spirit */ = {
+			isa = PBXGroup;
+			children = (
+				1CCC531718D5906D00C624E9 /* Demo */,
+				1CCC530918D569CD00C624E9 /* Classes */,
+			);
+			name = Spirit;
+			sourceTree = "<group>";
+		};
+		1CCC530618D4913800C624E9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1CCC530718D491E600C624E9 /* p4557986.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		1CCC530918D569CD00C624E9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1CCC530A18D569F400C624E9 /* Cell.h */,
+				1CCC530B18D569F400C624E9 /* Cell.m */,
+				1CCC531218D58F8B00C624E9 /* ZYCollectionViewController.h */,
+				1CCC531318D58F8B00C624E9 /* ZYCollectionViewController.m */,
+				1CCC531418D58F8B00C624E9 /* ZYCollectionViewController.xib */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1CCC531718D5906D00C624E9 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				1CCC531818D5908800C624E9 /* ViewController.h */,
+				1CCC531918D5908800C624E9 /* ViewController.m */,
+				1CCC531A18D5908800C624E9 /* ViewController.xib */,
+			);
+			name = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +275,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CCC531C18D5908800C624E9 /* ViewController.xib in Resources */,
 				1CCC52D918D484C700C624E9 /* InfoPlist.strings in Resources */,
 				1CCC52E118D484C700C624E9 /* Images.xcassets in Resources */,
+				1CCC531618D58F8B00C624E9 /* ZYCollectionViewController.xib in Resources */,
+				1CCC530818D491E600C624E9 /* p4557986.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CCC530C18D569F400C624E9 /* Cell.m in Sources */,
+				1CCC531518D58F8B00C624E9 /* ZYCollectionViewController.m in Sources */,
 				1CCC52DF18D484C700C624E9 /* AppDelegate.m in Sources */,
 				1CCC52DB18D484C700C624E9 /* main.m in Sources */,
+				1CCC531B18D5908800C624E9 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +499,7 @@
 				1CCC52F918D484C700C624E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CCC52FA18D484C700C624E9 /* Build configuration list for PBXNativeTarget "SpiritTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +508,7 @@
 				1CCC52FC18D484C700C624E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
