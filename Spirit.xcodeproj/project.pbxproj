@@ -25,6 +25,10 @@
 		1CCC531618D58F8B00C624E9 /* ZYCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC531418D58F8B00C624E9 /* ZYCollectionViewController.xib */; };
 		1CCC531B18D5908800C624E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC531918D5908800C624E9 /* ViewController.m */; };
 		1CCC531C18D5908800C624E9 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCC531A18D5908800C624E9 /* ViewController.xib */; };
+		1CCC532018D5A58C00C624E9 /* ZYurl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC531F18D5A58C00C624E9 /* ZYurl.m */; };
+		1CCC532218D5B2C500C624E9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCC532118D5B2C500C624E9 /* libxml2.dylib */; };
+		1CCC532D18D5C80B00C624E9 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC532A18D5C80B00C624E9 /* HTMLNode.m */; };
+		1CCC532E18D5C80B00C624E9 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC532C18D5C80B00C624E9 /* HTMLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,13 @@
 		1CCC531818D5908800C624E9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1CCC531918D5908800C624E9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1CCC531A18D5908800C624E9 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		1CCC531E18D5A58C00C624E9 /* ZYurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYurl.h; sourceTree = "<group>"; };
+		1CCC531F18D5A58C00C624E9 /* ZYurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYurl.m; sourceTree = "<group>"; };
+		1CCC532118D5B2C500C624E9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		1CCC532918D5C80B00C624E9 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		1CCC532A18D5C80B00C624E9 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		1CCC532B18D5C80B00C624E9 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		1CCC532C18D5C80B00C624E9 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CCC532218D5B2C500C624E9 /* libxml2.dylib in Frameworks */,
 				1CCC52D118D484C700C624E9 /* CoreGraphics.framework in Frameworks */,
 				1CCC52D318D484C700C624E9 /* UIKit.framework in Frameworks */,
 				1CCC52CF18D484C700C624E9 /* Foundation.framework in Frameworks */,
@@ -111,6 +123,7 @@
 		1CCC52CD18D484C700C624E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CCC532118D5B2C500C624E9 /* libxml2.dylib */,
 				1CCC52CE18D484C700C624E9 /* Foundation.framework */,
 				1CCC52D018D484C700C624E9 /* CoreGraphics.framework */,
 				1CCC52D218D484C700C624E9 /* UIKit.framework */,
@@ -181,6 +194,7 @@
 		1CCC530918D569CD00C624E9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1CCC531D18D5A54C00C624E9 /* Common */,
 				1CCC530A18D569F400C624E9 /* Cell.h */,
 				1CCC530B18D569F400C624E9 /* Cell.m */,
 				1CCC531218D58F8B00C624E9 /* ZYCollectionViewController.h */,
@@ -198,6 +212,19 @@
 				1CCC531A18D5908800C624E9 /* ViewController.xib */,
 			);
 			name = Demo;
+			sourceTree = "<group>";
+		};
+		1CCC531D18D5A54C00C624E9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1CCC532918D5C80B00C624E9 /* HTMLNode.h */,
+				1CCC532A18D5C80B00C624E9 /* HTMLNode.m */,
+				1CCC532B18D5C80B00C624E9 /* HTMLParser.h */,
+				1CCC532C18D5C80B00C624E9 /* HTMLParser.m */,
+				1CCC531E18D5A58C00C624E9 /* ZYurl.h */,
+				1CCC531F18D5A58C00C624E9 /* ZYurl.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CCC532D18D5C80B00C624E9 /* HTMLNode.m in Sources */,
+				1CCC532E18D5C80B00C624E9 /* HTMLParser.m in Sources */,
+				1CCC532018D5A58C00C624E9 /* ZYurl.m in Sources */,
 				1CCC530C18D569F400C624E9 /* Cell.m in Sources */,
 				1CCC531518D58F8B00C624E9 /* ZYCollectionViewController.m in Sources */,
 				1CCC52DF18D484C700C624E9 /* AppDelegate.m in Sources */,
@@ -421,6 +451,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spirit/Spirit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Spirit/Spirit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -434,6 +470,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spirit/Spirit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Spirit/Spirit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

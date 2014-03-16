@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZYCollectionViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-{
-    UICollectionView *_collectionView;
-}
+
 
 - (UICollectionViewFlowLayout *)createLayout;
 
