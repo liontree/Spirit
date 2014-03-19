@@ -16,4 +16,4 @@
 #endif
 
 
-#define HOST              @"http://dongxi.douban.com"
+#define HOST              @"http://dongxi.douban.com/"

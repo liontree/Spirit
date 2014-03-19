@@ -42,7 +42,7 @@
 //<span class="commodity-price">￥105.00</span>
 //</div>
 
-+(NSMutableArray *)getImgArray:(NSString *)host
++(NSMutableArray *)getCellContents:(NSString *)host
 {
     NSString *html = [ZYurl getUrl:host];
     NSError *error = nil;
@@ -51,51 +51,21 @@
         NSLog(@"Error: %@", error);
     }
     HTMLNode *bodyNode = [parser body];
-    NSMutableArray *urlImgArray = [[NSMutableArray alloc] init];
+    NSArray *cellContents = [bodyNode findChildrenOfClass:@"card-main"];
     
-    NSArray *divNodes = [bodyNode findChildrenOfClass:@"card-hd"];
-    for(HTMLNode *divNode in divNodes)
+    NSMutableArray *contentsForView = [[NSMutableArray alloc] init];
+    for(HTMLNode *content in cellContents)
     {
-        NSString *src = [[divNode findChildOfClass:@"story-image"] getAttributeNamed:@"src"];
-        NSLog(@"src is %@", src);
-        if(src)
-        {
-            [urlImgArray addObject:src];
-        }
+        NSMutableDictionary *cellDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                               @"src",@"title",nil];
+        NSString *src = [[content findChildOfClass:@"story-image"] getAttributeNamed:@"src"];
+        NSString *title = [[content findChildOfClass:@"story-title"] getAttributeNamed:@"title"];
+        [cellDictionary setObject:src forKey:@"src"];
+        [cellDictionary setObject:title forKey:@"title"];
+        [contentsForView addObject:cellDictionary];
     }
-    
-    return urlImgArray;
+    return contentsForView;
 }
 
-+(NSMutableArray *)getTitleArray:(NSString *)host
-{
-    NSString *html = [ZYurl getUrl:host];
-    NSError *error = nil;
-    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
-    if (error) {
-        NSLog(@"Error: %@", error);
-    }
-    HTMLNode *bodyNode = [parser body];
-    NSMutableArray *urlTitleArray = [[NSMutableArray alloc] init];
-    if(bodyNode)
-    {
-        NSArray *divNodes = [bodyNode findChildrenOfClass:@"card-bd"];
-        
-        for(HTMLNode *divNode in divNodes)
-        {
-            NSString *title = [[divNode findChildOfClass:@"story-title"] getAttributeNamed:@"title"];
-            NSLog(@"title is %@", title);
-            if(title)
-            {
-                [urlTitleArray addObject:title];
-            }
-        }
-    }
-    else
-    {
-        NSLog(@"error..");
-    }
-    return urlTitleArray;
-}
 
 @end

@@ -9,10 +9,16 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
+#import <SDWebImage/SDImageCache.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //add a cache path
+    NSString *bundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"CustomPathImages"];
+    [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundlePath];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     ViewController *controller = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];

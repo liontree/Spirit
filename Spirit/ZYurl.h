@@ -10,8 +10,6 @@
 
 @interface ZYurl : NSString
 
-+(NSMutableArray *)getImgArray:(NSString *)host;
-
-+(NSMutableArray *)getTitleArray:(NSString *)host;
++(NSMutableArray *)getCellContents:(NSString *)host;
 
 @end

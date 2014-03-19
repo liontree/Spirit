@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 Ying.Zhao. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "ZYCollectionViewController.h"
 #import "Cell.h"
 #import "ZYurl.h"
@@ -16,12 +17,16 @@
 
 @implementation ZYCollectionViewController
 
+@synthesize array;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
+    [SDWebImageManager.sharedManager.imageDownloader setValue:@"SDWebImage Demo" forHTTPHeaderField:@"AppName"];
+    SDWebImageManager.sharedManager.imageDownloader.executionOrder = SDWebImageDownloaderLIFOExecutionOrder;
     return self;
 }
 
@@ -29,6 +34,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSMutableArray *contents = [ZYurl getCellContents:HOST];
+    NSLog(@"execute now..");
+    array = contents;
 }
 
 - (UICollectionViewFlowLayout *)createLayout
@@ -40,7 +48,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return 50;
 }
 
 
@@ -48,23 +56,19 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    Cell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"cellIdentifier";
+    Cell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (cell == nil)
+    {
+        //
+    }
     cell.backgroundColor = [UIColor whiteColor];
-   
-    NSMutableArray *imgArray = [ZYurl getImgArray:HOST];
     
-    NSMutableArray *titleArray = [ZYurl getTitleArray:HOST];
+    NSString *src = [[array objectAtIndex:indexPath.row] objectForKey:@"src"];
     
-    for(NSString *url in imgArray)
-    {
-        cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-    }
+    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:src]]];
+    cell.textView.text = [[array objectAtIndex:indexPath.row] objectForKey:@"title"];
     
-    for(NSString *title in titleArray)
-    {
-        cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:title]]];
-    }
     return cell;
 }
 
@@ -78,6 +82,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

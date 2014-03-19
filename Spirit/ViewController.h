@@ -10,6 +10,6 @@
 
 @interface ViewController : ZYCollectionViewController
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UICollectionView *collectionview;
 
 @end

@@ -10,7 +10,7 @@
 
 @interface ZYCollectionViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-
 - (UICollectionViewFlowLayout *)createLayout;
+@property (nonatomic, strong) NSMutableArray *array;
 
 @end
