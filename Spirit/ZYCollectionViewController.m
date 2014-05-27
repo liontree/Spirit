@@ -66,7 +66,10 @@
     
     NSString *src = [[array objectAtIndex:indexPath.row] objectForKey:@"src"];
     
-    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:src]]];
+//    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:src]]];
+    
+    [cell.imageView setImageWithURL:[NSURL URLWithString:src]
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.textView.text = [[array objectAtIndex:indexPath.row] objectForKey:@"title"];
     
     return cell;
