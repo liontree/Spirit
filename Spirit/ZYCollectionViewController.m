@@ -63,15 +63,16 @@
         //
     }
     cell.backgroundColor = [UIColor whiteColor];
-    
-    NSString *src = [[array objectAtIndex:indexPath.row] objectForKey:@"src"];
+    int i = indexPath.row;
+    if (i<[array count]) {
+        NSString *src = [[array objectAtIndex:i] objectForKey:@"src"];
+        [cell.imageView setImageWithURL:[NSURL URLWithString:src]
+                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        cell.textView.text = [[array objectAtIndex:indexPath.row] objectForKey:@"title"];
+    }
     
 //    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:src]]];
-    
-    [cell.imageView setImageWithURL:[NSURL URLWithString:src]
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    cell.textView.text = [[array objectAtIndex:indexPath.row] objectForKey:@"title"];
-    
+        
     return cell;
 }
 
