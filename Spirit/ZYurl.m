@@ -22,6 +22,9 @@
      */
     NSURL *url = [NSURL URLWithString:host];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSDictionary *bid = [[NSDictionary alloc] initWithObjectsAndKeys:@"N8gQBiJfzMA",@"bid", nil];
+    NSString *vbid = [NSString stringWithFormat:@"bid=%@",[bid valueForKey:@"bid"]];
+    [request setValue:vbid forHTTPHeaderField:@"Cookie"];
     NSHTTPURLResponse *response = nil;
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
     
