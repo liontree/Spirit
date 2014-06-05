@@ -18,6 +18,7 @@
 @implementation ZYCollectionViewController
 
 @synthesize array;
+@synthesize host;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,7 +64,7 @@
         //
     }
     cell.backgroundColor = [UIColor whiteColor];
-    int i = indexPath.row;
+    long i = indexPath.row;
     if (i<[array count]) {
         NSString *src = [[array objectAtIndex:i] objectForKey:@"src"];
         [cell.imageView setImageWithURL:[NSURL URLWithString:src]

@@ -17,3 +17,17 @@
 
 
 #define HOST              @"http://dongxi.douban.com/"
+
+#define HOST_MAN          @"http://dongxi.douban.com/shows/%E7%94%B7%E5%A3%AB/"
+
+#define HOST_WOMAN        @"http://dongxi.douban.com/shows/%E5%A5%B3%E5%A3%AB/"
+
+#define HOST_HOME         @"http://dongxi.douban.com/shows/%E5%B1%85%E5%AE%B6/"
+
+#define HOST_DIGITAL      @"http://dongxi.douban.com/shows/%E6%95%B0%E7%A0%81/"
+
+#define HOST_OUTING       @"http://dongxi.douban.com/shows/%E6%88%B7%E5%A4%96/"
+
+#define HOST_GEEK         @"http://dongxi.douban.com/shows/Geek/"
+
+#define HOST_DESIGN       @"http://dongxi.douban.com/shows/%E8%AE%BE%E8%AE%A1%E6%84%9F/"

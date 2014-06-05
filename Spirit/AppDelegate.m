@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "LeftTableViewController.h"
+#import "RESideMenu.h"
 
 #import <SDWebImage/SDImageCache.h>
 
@@ -23,9 +25,14 @@
     self.window.backgroundColor = [UIColor whiteColor];
     ViewController *controller = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    LeftTableViewController *leftTableViewController = [[LeftTableViewController alloc] init];
+    
+    RESideMenu *menuViewController = [[RESideMenu alloc] initWithContentViewController:navController leftMenuViewController:leftTableViewController rightMenuViewController:nil];
+    
     navController.navigationBar.translucent = NO;
     self.viewController = navController;
-    self.window.rootViewController = self.viewController;
+//    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = menuViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

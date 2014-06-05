@@ -12,5 +12,6 @@
 
 - (UICollectionViewFlowLayout *)createLayout;
 @property (nonatomic, strong) NSMutableArray *array;
+@property (nonatomic, strong) NSString *host;
 
 @end

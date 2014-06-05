@@ -11,6 +11,7 @@
 #import "Cell.h"
 #import "ZYurl.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "RESideMenu.h"
 
 #import "Spirit-Prefix.pch"
 
@@ -51,6 +52,8 @@
     
     [collectionview registerClass:[Cell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [collectionview setBackgroundColor:[UIColor colorWithRed:224.0/255.0 green:229.0/255.0 blue:229.0/255.0 alpha:1.0]];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"menu" style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
     [self.view addSubview:collectionview];
 }
