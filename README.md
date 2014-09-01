@@ -1,4 +1,4 @@
 Spirit
 ======
 
-Waterfall like Fancy :)
+Waterfall like Fancy
